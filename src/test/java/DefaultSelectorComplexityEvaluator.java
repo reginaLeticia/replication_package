@@ -1,4 +1,5 @@
 
+import config.LocatorTypeScore;
 import org.jsoup.nodes.Document;
 
 /* [DESCRIPTION]
@@ -6,8 +7,11 @@ import org.jsoup.nodes.Document;
     - This means that the more the score tends to 1 the more fragile that selector is (and so is the Test).
 **/
 public class DefaultSelectorComplexityEvaluator implements ISelectorScoreStrategy {
-    @Override
+   // @Override
     public float evaluateSelectorComplexity(Selector selector, Document document) {
+
+        Float [] results = new Float[4];
+
         String selectorType   = selector.getType();
         String selectorString = selector.getSelector();
 
@@ -20,14 +24,18 @@ public class DefaultSelectorComplexityEvaluator implements ISelectorScoreStrateg
             case "CssSelector":
                 // depth = evaluateCssSelectorHierarchyDepth(selectorString);
                 depth = SelectorDepthEvaluator.evaluateCssSelectorHierarchyDepth(selectorString);
-                level = depth + 1;
-                hierarchyScore = (1 - ((float) 1 / level)); // [0-1]
+                results[0]= (float) depth;
+                //level = depth + 1;
+                hierarchyScore = (1 - ((float) 1 / depth)); // [0-1]
+                results[1] = (float) hierarchyScore;
                 break;
             case "XPath":
                 // depth = evaluateXPathSelectorHierarchyDepth(selectorString);
                 depth = SelectorDepthEvaluator.evaluateXPathSelectorHierarchyDepth(selectorString);
-                level = depth + 1;
-                hierarchyScore = (1 - ((float) 1 / level)); // [0-1]
+                //level = depth + 1;
+                results[0] = (float) depth;
+                hierarchyScore = (1 - ((float) 1 / depth)); // [0-1]
+                results[1] = (float) hierarchyScore;
                 break;
             default:
                 hierarchyScore = 0.0f;
@@ -46,28 +54,39 @@ public class DefaultSelectorComplexityEvaluator implements ISelectorScoreStrateg
                 typeScore = evaluateXPathTypeScore(selectorString, depth);
                 break;
             case "TagName":
+                typeScore= LocatorTypeScore.tagname_score;
+                break;
             case "Name":
-                typeScore = 0.8f;
+                typeScore = LocatorTypeScore.name_score;
                 break;
             case "LinkText":
+                typeScore = LocatorTypeScore.link_text_score;
+                break;
             case "ClassName":
-                typeScore = 0.5f;
+                typeScore = LocatorTypeScore.class_score;
                 break;
             case "PartialLinkText":
-                typeScore = 0.6f;
+                typeScore = LocatorTypeScore.partial_linktext_score;
                 break;
             case "Id":
+                typeScore = LocatorTypeScore.id_score;
+                break;
             default:
                 typeScore = 0.0f; // If the selector is of type "id" we set score to 0.0f too.
         }
         System.out.println("[Selector Complexity Evaluator] (Analyzed) Selector Type Score: " + typeScore);
 
+        results[2] = typeScore;
         // Step 3: Combination
+        //needed for the test
+        results[3] = ((hierarchyScore + typeScore) / 2); // [0-1]
+        //return results;
         return ((hierarchyScore + typeScore) / 2); // [0-1]
+
     }
 
     public static float getSelectorScoreWeight() {
-        return 0.33f;
+        return 0.0f;
     }
 
     /* METHODS */
@@ -122,9 +141,13 @@ public class DefaultSelectorComplexityEvaluator implements ISelectorScoreStrateg
     }
 
     private static float evaluateCssSelectorElementType(String lastElement) {
-        if (lastElement.startsWith("#")) {
+        //there's notigh like linkText and PartialText in CSS Sintax
+        if (lastElement.startsWith("#") || lastElement.contains("#")) {
             return 0.0f; // id selector
-        } else if (lastElement.startsWith(".")) {
+        }else if(lastElement.startsWith("[@name=") || lastElement.contains("[@name=") ){
+            return  0.0f;
+        }
+        else if (lastElement.startsWith(".") || lastElement.contains(".")) {
             return 0.5f; // class name selector
         } else {
             return 0.8f; // tag name selector or other types
@@ -142,7 +165,6 @@ public class DefaultSelectorComplexityEvaluator implements ISelectorScoreStrateg
         } else if (xpathLastElement.contains("[contains(text()")) { // Partial LinkText
             return 0.7f;
         }
-
         return 0.8f;
     }
 }

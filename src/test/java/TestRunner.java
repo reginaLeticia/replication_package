@@ -92,6 +92,7 @@ public class TestRunner {
         Class[] arg = new Class[1];
         arg[0] = WebDriver.class;
 
+        System.out.println(testName);
         // Execute it
         Class testX = Class.forName(testName);
         Object objPetX = create(testX);

@@ -2,6 +2,7 @@
 import org.openqa.selenium.By;
 
 public class Selector {
+
     private String selector; // String value of the Locator
     private String type;     // Type of the Locator
     private float selectorScore, selectorCombinedScoreWithPageScore;

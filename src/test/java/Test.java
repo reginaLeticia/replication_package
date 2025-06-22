@@ -4,6 +4,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.BufferedReader;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -60,21 +62,55 @@ public class Test {
         List<String> fileNames;
 
         switch (JUnitRunner.SoftwareUsed) {
-            case "PasswordManager":
+            case "PasswordManager":{
                 fileNames = new ArrayList<>();
                 TestListCreator.createPasswordManagerTestList(fileNames);
                 break;
-            case "JTrac":
+            }
+            case "JTrac":{
                 fileNames = new ArrayList<>();
                 TestListCreator.createJTracTestList(fileNames);
                 break;
-            case "Phormer":
+            }
+            case "Phormer": {
                 fileNames = new ArrayList<>();
                 TestListCreator.createPhormerTestList(fileNames);
                 break;
-            default:
+            }
+            case "Claroline": {
+                fileNames = new ArrayList<>();
+                TestListCreator.createClarolineTestList(fileNames);
+                break;
+            }
+            case "MRBS":{
+                fileNames = new ArrayList<>();
+                TestListCreator.createMRBSTestList(fileNames);
+                break;
+            }
+            case "MantisBT":{
+                fileNames= new ArrayList<>();
+                TestListCreator.createMantisBTTestList(fileNames);
+                break;
+            }
+            case "AddressBook810":{
+                fileNames = new ArrayList<>();
+                TestListCreator.createAddressBookTestList(fileNames,"810");
+                break;
+            }
+            case "AddressBook816":{
+                fileNames = new ArrayList<>();
+                TestListCreator.createAddressBookTestList(fileNames,"816");
+                break;
+            }
+            case "AddressBook817":{
+                fileNames = new ArrayList<>();
+                TestListCreator.createAddressBookTestList(fileNames,"817");
+                break;
+            }
+            default: {
                 fileNames = getFileNames(directory);
                 break;
+            }
         }
 
         for (String className : fileNames) {
@@ -82,6 +118,7 @@ public class Test {
             listOfTests.add(newTest);
         }
 
+        System.out.println(listOfTests);
         return listOfTests;
     }
 
@@ -98,6 +135,7 @@ public class Test {
                     }
                 }
             }
+            Collections.sort(fileNames);
         }
 
         // TODO: FOR NEW MANTISBT TEST. THIS IS NOT THE END SOLUTION

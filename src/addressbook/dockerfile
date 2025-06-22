@@ -1,0 +1,16 @@
+# Use a PHP-Apache base image
+
+#5.4.39 version required to 8.1.9
+#FROM php:5.4.39-apache
+
+FROM php:5.3.29-apache
+
+# run command required to 5.4.39 version
+#RUN docker-php-ext-configure mysql && docker-php-ext-install mysql
+
+WORKDIR /var/www/html
+
+#change the addressbookv.x.x version with the version that you want build up
+COPY addressbookv8.1.0 /var/www/html
+
+

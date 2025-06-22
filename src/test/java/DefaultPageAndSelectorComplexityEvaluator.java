@@ -33,7 +33,7 @@ public class DefaultPageAndSelectorComplexityEvaluator implements IPageAndSelect
                     depth = SelectorDepthEvaluator.evaluateXPathSelectorHierarchyDepth(selectorString);
 
                 System.out.println("[Page And Selector Complexity Evaluator] Depth: " + depth);
-                if (depth >= 1) {
+                if (depth > 1) {
                     newSelectorString = removeFirstLevelForSelector(selectorString, selectorType);
 
                     /* [IMPORTANT]
@@ -90,7 +90,19 @@ public class DefaultPageAndSelectorComplexityEvaluator implements IPageAndSelect
             **/
             if (index != -1)
                 return "/" + selectorString.substring(index);
-        } else {
+        } else if(selectorString.startsWith(".//")){
+            index = selectorString.indexOf("/",3);
+            if(index!= -1)
+                return  "//"+selectorString.substring(index+1);
+        } else if (selectorString.startsWith("(//")){
+            index = selectorString.indexOf("/",3);
+            if(index!= -1)
+                return  "(//"+selectorString.substring(index+1);
+        } else if (selectorString.startsWith("(/")){
+            index = selectorString.indexOf("/",2);
+            if(index!= -1)
+                return  "(//"+selectorString.substring(index+1);
+        }else {
             /*
                 - Input:  html/body/table[3]/tbody/tr[3]/td[2]
                 - Output: //body/table[3]/tbody/tr[3]/td[2]     (We can't risk it to not be recognized)
@@ -121,6 +133,6 @@ public class DefaultPageAndSelectorComplexityEvaluator implements IPageAndSelect
     }
 
     public static float getPageAndSelectorScoreWeight() {
-        return 0.33f;
+        return 0.50f;
     }
 }

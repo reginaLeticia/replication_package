@@ -14,7 +14,7 @@ public class SelectorDepthEvaluator {
         }
 
         String[] combinators = selectorString.split("[ >~+]+");
-        return combinators.length - 1;
+        return combinators.length;
     }
 
     /* [DESCRIPTION]
@@ -27,13 +27,16 @@ public class SelectorDepthEvaluator {
             System.out.println("[Selector Complexity Evaluator] (ERROR) " + selectorString + " is Null or empty string!");
             return 0;
         }
-
         if (selectorString.startsWith("//"))
             selectorString = selectorString.substring(2);
         else if (selectorString.startsWith("/"))
             selectorString = selectorString.substring(1);
-
+        else if (selectorString.startsWith("(//") || selectorString.startsWith(".//")){
+            selectorString = selectorString.substring(3);
+        }else if(selectorString.startsWith("(/")){
+            selectorString = selectorString.substring(2);
+        }
         String[] combinators = selectorString.split("/");
-        return combinators.length - 1;
+        return combinators.length;
     }
 }

@@ -1,0 +1,32 @@
+type, selector, locator_type_score, num_level, hierarchy, locator_score
+CssSelector,p:first-child,0.8,1,0,0.4
+CssSelector,p,0.8,1,0,0.4
+CssSelector,.nome-class,0.5,1,0,0.25
+CssSelector,div p,0.8,2,0.5,0.65
+CssSelector,div>p,0.8,2,0.5,0.65
+CssSelector,input[type="text"],0.8,1,0,0.4
+CssSelector,a:hover,0.8,1,0,0.4
+CssSelector,header.log,0.5,1,0,0.25
+CssSelector,ul > li[data="true"],0.8,2,0.5,0.65
+CssSelector,button.btn-primary,0.5,1,0,0.25
+CssSelector,section.titolo > h2,0.8,2,0.5,0.65
+CssSelector,header .logo .icon,0.5,3,0.6666666,0.5833333
+CssSelector,article #articolo [data_info="importante"],0.8,3,0.6666666,0.73333335
+CssSelector,nav ul li,0.8,3,0.6666666,0.73333335
+CssSelector,section .contenuto .paragrafo:hover,0.5,3,0.6666666,0.5833333
+CssSelector,section .contenuto> .form-act #text_input,0,4,0.75,0.375
+XPath,//div,0.8,1,0,0.4
+XPath,//input[@type='text'],0.8,1,0,0.4
+XPath,//*[@class='nome-classe'],0.5,1,0,0.25
+XPath,//*[@id='nome-id'],0,1,0,0
+XPath,//div/p,0.8,2,0.5,0.65
+XPath,//p[text()='Testo desiderato'],0.6,1,0,0.3
+XPath,//a[contains(@href-'parziale')],0.8,1,0,0.4
+XPath,//a[@name='name'],0,1,0,0
+XPath,//*[@id='container']/div/p,0.8,3,0.6666666,0.73333335
+XPath,//div[@class='box']/span,0.8,2,0.5,0.65
+XPath,//input[@type='text']/following-sibling::label,0.8,2,0.5,0.65
+XPath,//ul/li[3]/a,0.8,3,0.6666666,0.73333335
+XPath,//h2[text()='Titolo Sezione']/following-sibling::p,0.8,2,0.5,0.65
+XPath,//a[contains(@href-'parte-url')]/span,0.8,2,0.5,0.65
+XPath,//*[text()='Testo desiderato']/following-sibling::div,0.8,2,0.5,0.65

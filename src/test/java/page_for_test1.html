@@ -1,0 +1,88 @@
+<HTML>
+<HEAD>
+    <TITLE>Esempio 3</TITLE>
+</HEAD>
+<BODY BACKGROUND="titto_green_paper.jpg">
+
+<div style="text-align: center;"><H1>Esempio 3: uso di tabelle e di un contatore</H1></div>
+
+<UL> <!-- a questa UL (unordered list) non corrispondera' nessun
+          LI (list item), il suo scopo e' solo quello di indentare
+          il testo della pagina -->
+
+    <P>    <!-- P sta per paragraph, impone di saltare una linea -->
+        <FONT SIZE=+2>esempio di tabella:</FONT>
+    <P>
+    <div style="text-align: center;"><TABLE BORDER COLS=2 WIDTH="90%">
+        <TR>
+            <TD>Riga 1 - Colonna 1</TD>
+            <TD>Una tabella pu&ograve; contenere qualsiasi cosa.
+                Questa che segue è
+                una lista.
+                <P>
+                <UL>
+                    <LI>elemento 1</LI>
+                    <LI>elemento 2</LI>
+                </UL>
+            </TD>
+        </TR>
+
+        <TR>
+            <TD>La tabella può contenere altre tabelle:<P>
+                <TABLE BORDER COLS=2 WIDTH="100%">
+                    <TR>
+                        <TD>seconda tabella elem. (1,1)</TD>
+                        <TD>seconda tabella elem. (1,2)</TD>
+                    </TR>
+                </TABLE><P>
+            </TD>
+            <TD>La tabella pu&ograve; contenere immagini
+                <IMG SRC="dragon.gif" HEIGHT=50 WIDTH=66>
+                questa è un'immagine GIF animato, il cui
+                colore di sfondo è il trasparente.
+            </TD>
+        </TR>
+    </TABLE>
+    </div>
+
+    <P>
+        <span SIZE=+2>i bordi della tabella possono essere invisibili:</span>
+    <P>
+    <div style="text-align: center;"><TABLE COLS=2 WIDTH="50%">
+        <TR>
+            <TD>Riga 1 - Colonna 1: questo &egrave; un esempio di tabella i
+                cui bordi sono invisibili
+            </TD>
+            <TD>Riga 1 - Colonna 2: il testo viene posizionato all'interno
+                di ogni casella, rispettando i mutui rapporti tra le
+                caselle
+            </TD>
+        </TR>
+        <TR>
+            <TD>Riga 2 - Colonna 1: questo sistema pu&ograve; essere usato per
+                ottenere effetti di formattazione (allineamenti,
+                incolonnamenti) altrimenti impossibili per un linguaggio
+                che fa uso di marcatori logici e non fisici.
+            </TD>
+            <TD><CENTER>questo</CENTER>
+                <CENTER>testo</CENTER>
+                <CENTER>è</CENTER>
+                <CENTER>centrato</CENTER>
+            </TD>
+        </TR>
+    </TABLE>
+    </div>
+
+    <HR WIDTH="100%">  <!-- HR = hard line -->
+    <BR>
+        <span SIZE=+2>questa pagina è stata acceduta
+        <IMG SRC="http://www.inf.uniroma3.it/cgi-bin/nph-count?width=5&link=esempio_2.html"
+             HEIGHT=20
+             WIDTH=75>
+            volte.
+        </span>
+
+</UL> <!-- fine dell'indentatura -->
+
+</BODY>
+</HTML>

@@ -58,12 +58,12 @@ public class JUnitRunner {
         log.logResult(testsJudged, testRunner);
     }
 
-    private static JsonObject readConfigurationFile() throws IOException {
+    public static JsonObject readConfigurationFile() throws IOException {
         String content = new String(Files.readAllBytes(Paths.get("src/test/java/config/configuration.json")));
         return new JsonParser().parse(content).getAsJsonObject();
     }
 
-    private static Object instantiateScoreStrategy(String className) throws Exception {
+    public static Object instantiateScoreStrategy(String className) throws Exception {
         Class<?> c = Class.forName(className);
         return c.getDeclaredConstructor().newInstance();
     }

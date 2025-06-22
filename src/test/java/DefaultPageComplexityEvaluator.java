@@ -8,29 +8,48 @@ import org.jsoup.select.Elements;
     - This means that the more the score tends to 1 the more fragile that selector is (and so is the Test).
 **/
 public class DefaultPageComplexityEvaluator implements IPageScoreStrategy {
-    private static int numberOfElements;
+    public static int numberOfElements;
 
     @Override
     public float evaluatePageComplexity(Page page) {
         Document document = page.getPage();
         setNumberOfElements(document.select("*").size());
-
-        float firstRatio  = evaluateLinkRatio(document);            // [0-1]
-        float secondRatio = evaluateDomRatio(document);             // [0-1]
-        float thirdRatio  = evaluateBranchingFactorRatio(document); // [0-1]
-
+        System.out.println("NUMBER OF PAGE ELEMENTS: "+numberOfElements);
+        float firstRatio  = evaluateLinkRatio(document);// [0-1]
+        System.out.println("NAV(P)= "+firstRatio);
+        float secondRatio = evaluateDomRatio(document);// [0-1]
+        System.out.println("DEPTH(P): "+secondRatio);
+        float thirdRatio  = evaluateBranchingFactorRatio(document)/numberOfElements; // [0-1]
+        System.out.println("BRANCH(P): "+thirdRatio);
         return ((firstRatio + secondRatio + thirdRatio) / 3); // [0-1]
     }
 
+   public Float[] evaluatePageComplexityArray(Page page){
+
+        Float [] res = new Float[4];
+        Document document = page.getPage();
+        setNumberOfElements(document.select("*").size());
+
+        float firstRatio  = evaluateLinkRatio(document);            // [0-1]
+        res[0] = firstRatio;
+        float secondRatio = evaluateDomRatio(document);             // [0-1]
+        res[1] = secondRatio;
+        float thirdRatio  = evaluateBranchingFactorRatio(document)/numberOfElements; // [0-1]
+        res[2] = thirdRatio;
+        res[3] = ((firstRatio + secondRatio + thirdRatio) / 3);
+        return res;
+
+     }
+
     public static float getPageScoreWeight() {
-        return 0.33f;
+        return 0.50f;
     }
 
     private static void setNumberOfElements(int numberOfElements) {
         DefaultPageComplexityEvaluator.numberOfElements = numberOfElements;
     }
 
-    private static int getNumberOfElements() {
+    public static int getNumberOfElements() {
         return numberOfElements;
     }
 
@@ -39,20 +58,28 @@ public class DefaultPageComplexityEvaluator implements IPageScoreStrategy {
     private static float evaluateLinkRatio(Document document) {
         Elements links = document.select("a");
         float nLinks = links.size();
+        System.out.println("NUMBER OF LINK ELEMENT: "+nLinks);
         return (nLinks / getNumberOfElements()); // [0-1]
     }
 
     private static float evaluateDomRatio(Document document) {
         float depth  = (float) evaluatePageDepth(document.child(0)); // Starting from root element
+        System.out.println("LEVEL: "+depth);
         return (depth / getNumberOfElements()); // [0-1]
     }
 
     private static float evaluateBranchingFactorRatio(Document document) {
         int sumBranchingFactor = 0;
+        int denominator = 0;
         for (Element elem : document.select("*")) {
-            sumBranchingFactor += evaluateBranchingFactorForElement(elem);
+            int elem_child_size = evaluateBranchingFactorForElement(elem);
+            if(elem_child_size!=0){
+                sumBranchingFactor += elem_child_size;
+                denominator++;
+            }
         }
-        return ((float) sumBranchingFactor / getNumberOfElements()); // [0-1]
+        System.out.println("BF-MEDIO: "+sumBranchingFactor+" DEN: "+denominator+" 1-RP: "+((float) sumBranchingFactor /denominator));
+        return ((float) sumBranchingFactor /denominator); // [0-1]
     }
 
     /* HELPER FUNCTIONS */
@@ -66,7 +93,6 @@ public class DefaultPageComplexityEvaluator implements IPageScoreStrategy {
                 int childDepth = evaluatePageDepth(child);
                 maxChildrenDepth = Math.max(maxChildrenDepth, childDepth);
             }
-
             return 1 + maxChildrenDepth;
         }
     }
