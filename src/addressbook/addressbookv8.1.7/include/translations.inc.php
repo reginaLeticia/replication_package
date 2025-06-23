@@ -1,6 +1,7 @@
 <?php
 
 $default_lang   = 'en';
+$lang = 'it';
 
 //
 // New translations are welcome:
