@@ -7,11 +7,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class AddressBookRemoveAddressBookTest {
 
 	private  WebDriver driver = new ChromeDriver();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 
 
 	public void setUp(WebDriver driver) {
@@ -26,6 +31,7 @@ public class AddressBookRemoveAddressBookTest {
 		//driver.findElement(By.name("user")).sendKeys("admin");
 		//driver.findElement(By.name("pass")).sendKeys("secret");
 		//driver.findElement(By.xpath(".//*[@id='content']/form/input[3]")).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("html/body/div[1]/div[4]/form[2]/table/tbody/tr[2]/td[1]/input")));
 		driver.findElement(By.xpath("html/body/div[1]/div[4]/form[2]/table/tbody/tr[2]/td[1]/input")).click();
 		driver.findElement(By.xpath("html/body/div[1]/div[4]/form[2]/div[2]/input")).click();
 		driver.switchTo().alert().accept();

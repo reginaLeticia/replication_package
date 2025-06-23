@@ -8,11 +8,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class AddressBookCheckBirthdayInfoTest {
 
 	private  WebDriver driver = new ChromeDriver();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 
 
 	public void setUp(WebDriver driver) {
@@ -26,6 +31,7 @@ public class AddressBookCheckBirthdayInfoTest {
 		//driver.findElement(By.name("user")).sendKeys("admin");
 		//driver.findElement(By.name("pass")).sendKeys("secret");
 		//driver.findElement(By.xpath(".//*[@id='content']/form/input[3]")).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("compleanni")));
 		driver.findElement(By.linkText("compleanni")).click();
 		assertEquals("19.", driver.findElement(By.xpath(".//*[@id='birthdays']/tbody/tr[2]/td[1]")).getText());
 		assertEquals("lastname", driver.findElement(By.xpath(".//*[@id='birthdays']/tbody/tr[2]/td[2]")).getText());

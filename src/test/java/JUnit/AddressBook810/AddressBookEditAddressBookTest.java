@@ -5,6 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import static org.junit.Assert.assertTrue;
 
@@ -13,6 +17,7 @@ public class AddressBookEditAddressBookTest {
 	private  WebDriver driver = new ChromeDriver();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 
 	public void setUp(WebDriver driver) {
 		this.driver.quit();
@@ -26,7 +31,9 @@ public class AddressBookEditAddressBookTest {
 		//driver.findElement(By.name("user")).sendKeys("admin");
 		//driver.findElement(By.name("pass")).sendKeys("secret");
 		//driver.findElement(By.xpath(".//*[@id='content']/form/input[3]")).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("img[alt=\"Modifica\"]")));
 		driver.findElement(By.cssSelector("img[alt=\"Modifica\"]")).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("address")));
 		driver.findElement(By.name("address")).clear();
 		driver.findElement(By.name("address")).sendKeys("newaddress");
 		driver.findElement(By.name("home")).clear();

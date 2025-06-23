@@ -7,11 +7,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class AddressBookSearchAddressBookNameTest {
 
 	private  WebDriver driver = new ChromeDriver();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 
 
 	public void setUp(WebDriver driver) {
@@ -25,6 +30,7 @@ public class AddressBookSearchAddressBookNameTest {
 		//driver.findElement(By.name("user")).sendKeys("admin");
 		//driver.findElement(By.name("pass")).sendKeys("secret");
 		//driver.findElement(By.xpath(".//*[@id='content']/form/input[3]")).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("searchstring")));
 		driver.findElement(By.name("searchstring")).clear();
 		driver.findElement(By.name("searchstring")).sendKeys("name");
 		assertEquals("Numero di risultati: 1",

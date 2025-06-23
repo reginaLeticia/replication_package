@@ -7,13 +7,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class AddressBookAssignToMultipleGroupsTest {
 
 	private  WebDriver driver = new ChromeDriver();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 
 	public void setUp(WebDriver driver) {
 		this.driver.quit();
@@ -26,7 +31,9 @@ public class AddressBookAssignToMultipleGroupsTest {
 		//driver.findElement(By.name("user")).sendKeys("admin");
 		//driver.findElement(By.name("pass")).sendKeys("secret");
 		//driver.findElement(By.xpath(".//*[@id='content']/form/input[3]")).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("html/body/div[1]/div[4]/form[2]/table/tbody/tr[2]/td[1]/input")));
 		driver.findElement(By.xpath("html/body/div[1]/div[4]/form[2]/table/tbody/tr[2]/td[1]/input")).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("add")));
 		driver.findElement(By.name("add")).click();
 		assertTrue(driver.findElement(By.xpath("html/body/div[1]/div[4]/div")).getText().contains("Users added."));
 		driver.findElement(By.linkText("homepage")).click();

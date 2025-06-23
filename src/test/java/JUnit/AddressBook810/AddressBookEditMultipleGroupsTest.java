@@ -7,13 +7,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class AddressBookEditMultipleGroupsTest {
 
 	private  WebDriver driver = new ChromeDriver();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
-
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 
 	public void setUp(WebDriver driver) {
 		this.driver.quit();
@@ -26,7 +30,9 @@ public class AddressBookEditMultipleGroupsTest {
 		//driver.findElement(By.name("user")).sendKeys("admin");
 		//driver.findElement(By.name("pass")).sendKeys("secret");
 		//driver.findElement(By.xpath(".//*[@id='content']/form/input[3]")).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("gruppi")));
 		driver.findElement(By.linkText("gruppi")).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='content']/form/input[4]")));
 		driver.findElement(By.xpath(".//*[@id='content']/form/input[4]")).click();
 		driver.findElement(By.xpath(".//*[@id='content']/form/input[9]")).click();
 		driver.findElement(By.name("group_name")).clear();
@@ -36,6 +42,7 @@ public class AddressBookEditMultipleGroupsTest {
 		driver.findElement(By.name("group_footer")).clear();
 		driver.findElement(By.name("group_footer")).sendKeys("New Footer1");
 		driver.findElement(By.name("update")).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("group page")));
 		driver.findElement(By.linkText("group page")).click();
 		driver.findElement(By.xpath(".//*[@id='content']/form/input[4]")).click();
 		driver.findElement(By.xpath(".//*[@id='content']/form/input[9]")).click();
@@ -46,6 +53,7 @@ public class AddressBookEditMultipleGroupsTest {
 		driver.findElement(By.name("group_footer")).clear();
 		driver.findElement(By.name("group_footer")).sendKeys("New Footer2");
 		driver.findElement(By.name("update")).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("group page")));
 		driver.findElement(By.linkText("group page")).click();	
 		driver.findElement(By.xpath(".//*[@id='content']/form/input[4]")).click();
 		driver.findElement(By.xpath(".//*[@id='content']/form/input[9]")).click();
@@ -56,6 +64,7 @@ public class AddressBookEditMultipleGroupsTest {
 		driver.findElement(By.name("group_footer")).clear();
 		driver.findElement(By.name("group_footer")).sendKeys("New Footer3");
 		driver.findElement(By.name("update")).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("group page")));
 		driver.findElement(By.linkText("group page")).click();
 		assertTrue(driver.findElement(By.xpath(".//*[@id='content']/form")).getText().contains("NewGroup1"));
 		assertTrue(driver.findElement(By.xpath(".//*[@id='content']/form")).getText().contains("NewGroup2"));
