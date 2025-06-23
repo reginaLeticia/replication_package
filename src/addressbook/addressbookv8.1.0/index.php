@@ -1,5 +1,4 @@
 <?php
-	phpinfo();
 	include ("include/dbconnect.php");
 	include ("include/format.inc.php");
 ?>

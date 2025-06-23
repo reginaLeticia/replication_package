@@ -1,26 +1,28 @@
-version: '3.3'
+version: "3.3"
 
 services:
   addressbook:
-     image: addressbookv8.1.0:latest
-     environment:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: addressbookv8.1.0:latest
+    environment:
       - TZ=Europe/Rome
-     ports:
+    ports:
       - 3000:80
-     depends_on:
-      - db 
+    depends_on:
+      - db
+
   db:
     image: mysql:5.5.42
     environment:
-     MYSQL_ROOT_PASSWORD: root
-     MYSQL_DATABASE: addressbook
-     MYSQL_USER: root
-     MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: addressbook
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
     ports:
-     - 3306:3306
-    #command: sh -c "docker cp /home/sergio/IdeaProjects/FSE19-submission-material-TEDD/testsuite-addressbook/src/main/resources/addressbook.sql addressbook_db_1:addressbook.sql"
+      - 3306:3306
     volumes:
       - ./data:/var/lib/mysql
       - ./mysql-dump-8.1.0:/docker-entrypoint-initdb.d
     command: ["--init-file", "/docker-entrypoint-initdb.d/addressbook.sql"]
-    

@@ -5,6 +5,9 @@
 
 FROM php:5.3.29-apache
 
+# Cria o diretório necessário para o Apache não falhar
+RUN mkdir -p /var/lock/apache2 /var/run/apache2
+
 # run command required to 5.4.39 version
 #RUN docker-php-ext-configure mysql && docker-php-ext-install mysql
 
@@ -12,5 +15,3 @@ WORKDIR /var/www/html
 
 #change the addressbookv.x.x version with the version that you want build up
 COPY addressbookv8.1.0 /var/www/html
-
-
