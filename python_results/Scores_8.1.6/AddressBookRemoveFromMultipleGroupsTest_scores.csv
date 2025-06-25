@@ -1,0 +1,8 @@
+Type, Selector, SelectorScore, PageScore, PageAndSelectorScore, SelectorWeightedAverageResult 
+
+Name, group, 0.000, 0.091, 0.000, 0.046
+XPath, html/body/div[1]/div[4]/form[2]/table/tbody/tr[2]/td[1]/input, 0.850, 0.089, 0.000, 0.044
+Name, remove, 0.000, 0.089, 0.000, 0.044
+LinkText, homepage, 0.300, 0.149, 0.000, 0.075
+Name, group, 0.000, 0.091, 0.000, 0.046
+XPath, html/body/div[1]/div[4]/form[2]/table/tbody/tr[2]/td[1]/input, 0.850, 0.087, 1.000, 0.544

@@ -1,0 +1,33 @@
+Type, Selector, SelectorScore, PageScore, PageAndSelectorScore, SelectorWeightedAverageResult 
+
+LinkText, gruppi, 0.300, 0.092, 0.000, 0.046
+Name, new, 0.000, 0.131, 0.000, 0.065
+Name, group_name, 0.000, 0.117, 0.000, 0.058
+Name, group_name, 0.000, 0.117, 0.000, 0.058
+Name, group_header, 0.000, 0.117, 0.000, 0.058
+Name, group_header, 0.000, 0.117, 0.000, 0.058
+Name, group_footer, 0.000, 0.117, 0.000, 0.058
+Name, group_footer, 0.000, 0.117, 0.000, 0.058
+Name, submit, 0.000, 0.117, 0.000, 0.058
+LinkText, group page, 0.300, 0.146, 0.000, 0.073
+Name, new, 0.000, 0.127, 0.000, 0.063
+Name, group_name, 0.000, 0.115, 0.000, 0.058
+Name, group_name, 0.000, 0.115, 0.000, 0.058
+Name, group_header, 0.000, 0.115, 0.000, 0.058
+Name, group_header, 0.000, 0.115, 0.000, 0.058
+Name, group_footer, 0.000, 0.115, 0.000, 0.058
+Name, group_footer, 0.000, 0.115, 0.000, 0.058
+Name, submit, 0.000, 0.115, 0.000, 0.058
+LinkText, group page, 0.300, 0.146, 0.000, 0.073
+Name, new, 0.000, 0.123, 0.000, 0.061
+Name, group_name, 0.000, 0.114, 0.000, 0.057
+Name, group_name, 0.000, 0.114, 0.000, 0.057
+Name, group_header, 0.000, 0.114, 0.000, 0.057
+Name, group_header, 0.000, 0.114, 0.000, 0.057
+Name, group_footer, 0.000, 0.114, 0.000, 0.057
+Name, group_footer, 0.000, 0.114, 0.000, 0.057
+Name, submit, 0.000, 0.114, 0.000, 0.057
+LinkText, group page, 0.300, 0.146, 0.000, 0.073
+XPath, .//*[@id='content']/form, 0.650, 0.119, 0.000, 0.060
+XPath, .//*[@id='content']/form, 0.650, 0.119, 0.000, 0.060
+XPath, .//*[@id='content']/form, 0.650, 0.119, 0.000, 0.060
