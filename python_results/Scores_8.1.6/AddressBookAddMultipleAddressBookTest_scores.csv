@@ -1,7 +1,7 @@
 Type, Selector, SelectorScore, PageScore, PageAndSelectorScore, SelectorWeightedAverageResult 
 
 LinkText, nuovo, 0.300, 0.095, 0.000, 0.048
-Name, quickadd, 0.000, 0.127, 0.000, 0.063
+Name, quickadd, 0.000, 0.129, 0.000, 0.064
 Name, firstname, 0.000, 0.039, 0.000, 0.020
 Name, firstname, 0.000, 0.039, 0.000, 0.020
 Name, lastname, 0.000, 0.039, 0.000, 0.020
@@ -18,5 +18,50 @@ Name, byear, 0.000, 0.039, 0.000, 0.020
 Name, byear, 0.000, 0.039, 0.000, 0.020
 Name, submit, 0.000, 0.039, 0.000, 0.020
 LinkText, add next, 0.300, 0.148, 0.000, 0.074
-Name, quickadd, 0.000, 0.127, 0.000, 0.063
-Name, firstname, 0.000, 0.127, 0.000, 0.063
+Name, quickadd, 0.000, 0.129, 0.000, 0.064
+Name, firstname, 0.000, 0.039, 0.000, 0.020
+Name, firstname, 0.000, 0.039, 0.000, 0.020
+Name, lastname, 0.000, 0.039, 0.000, 0.020
+Name, lastname, 0.000, 0.039, 0.000, 0.020
+Name, address, 0.000, 0.039, 0.000, 0.020
+Name, address, 0.000, 0.039, 0.000, 0.020
+Name, home, 0.000, 0.039, 0.000, 0.020
+Name, home, 0.000, 0.039, 0.000, 0.020
+Name, email, 0.000, 0.039, 0.000, 0.020
+Name, email, 0.000, 0.039, 0.000, 0.020
+Name, bday, 0.000, 0.039, 0.000, 0.020
+Name, bmonth, 0.000, 0.039, 0.000, 0.020
+Name, byear, 0.000, 0.039, 0.000, 0.020
+Name, byear, 0.000, 0.039, 0.000, 0.020
+Name, submit, 0.000, 0.039, 0.000, 0.020
+LinkText, add next, 0.300, 0.148, 0.000, 0.074
+Name, quickadd, 0.000, 0.129, 0.000, 0.064
+Name, firstname, 0.000, 0.039, 0.000, 0.020
+Name, firstname, 0.000, 0.039, 0.000, 0.020
+Name, lastname, 0.000, 0.039, 0.000, 0.020
+Name, lastname, 0.000, 0.039, 0.000, 0.020
+Name, address, 0.000, 0.039, 0.000, 0.020
+Name, address, 0.000, 0.039, 0.000, 0.020
+Name, home, 0.000, 0.039, 0.000, 0.020
+Name, home, 0.000, 0.039, 0.000, 0.020
+Name, email, 0.000, 0.039, 0.000, 0.020
+Name, email, 0.000, 0.039, 0.000, 0.020
+Name, bday, 0.000, 0.039, 0.000, 0.020
+Name, bmonth, 0.000, 0.039, 0.000, 0.020
+Name, byear, 0.000, 0.039, 0.000, 0.020
+Name, byear, 0.000, 0.039, 0.000, 0.020
+Name, submit, 0.000, 0.039, 0.000, 0.020
+LinkText, home page, 0.300, 0.148, 0.000, 0.074
+XPath, html/body/div[1]/div[4]/label/strong, 0.817, 0.092, 0.000, 0.046
+XPath, .//*[@id='maintable']/tbody/tr[2]/td[3], 0.775, 0.092, 0.000, 0.046
+XPath, .//*[@id='maintable']/tbody/tr[2]/td[4], 0.775, 0.092, 0.000, 0.046
+XPath, .//*[@id='maintable']/tbody/tr[2]/td[5], 0.775, 0.092, 0.000, 0.046
+XPath, .//*[@id='maintable']/tbody/tr[2]/td[6], 0.775, 0.092, 0.000, 0.046
+XPath, .//*[@id='maintable']/tbody/tr[3]/td[3], 0.775, 0.092, 0.000, 0.046
+XPath, .//*[@id='maintable']/tbody/tr[3]/td[4], 0.775, 0.092, 0.000, 0.046
+XPath, .//*[@id='maintable']/tbody/tr[3]/td[5], 0.775, 0.092, 0.000, 0.046
+XPath, .//*[@id='maintable']/tbody/tr[3]/td[6], 0.775, 0.092, 0.000, 0.046
+XPath, .//*[@id='maintable']/tbody/tr[4]/td[3], 0.775, 0.092, 0.000, 0.046
+XPath, .//*[@id='maintable']/tbody/tr[4]/td[4], 0.775, 0.092, 0.000, 0.046
+XPath, .//*[@id='maintable']/tbody/tr[4]/td[5], 0.775, 0.092, 0.000, 0.046
+XPath, .//*[@id='maintable']/tbody/tr[4]/td[6], 0.775, 0.092, 0.000, 0.046

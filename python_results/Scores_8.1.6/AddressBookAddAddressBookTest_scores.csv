@@ -1,5 +1,22 @@
 Type, Selector, SelectorScore, PageScore, PageAndSelectorScore, SelectorWeightedAverageResult 
 
 LinkText, nuovo, 0.300, 0.095, 0.000, 0.048
-Name, quickadd, 0.000, 0.127, 0.000, 0.063
-Name, firstname, 0.000, 0.127, 0.000, 0.063
+Name, quickadd, 0.000, 0.129, 0.000, 0.064
+Name, firstname, 0.000, 0.039, 0.000, 0.020
+Name, firstname, 0.000, 0.039, 0.000, 0.020
+Name, lastname, 0.000, 0.039, 0.000, 0.020
+Name, lastname, 0.000, 0.039, 0.000, 0.020
+Name, address, 0.000, 0.039, 0.000, 0.020
+Name, address, 0.000, 0.039, 0.000, 0.020
+Name, home, 0.000, 0.039, 0.000, 0.020
+Name, home, 0.000, 0.039, 0.000, 0.020
+Name, email, 0.000, 0.039, 0.000, 0.020
+Name, email, 0.000, 0.039, 0.000, 0.020
+Name, bday, 0.000, 0.039, 0.000, 0.020
+Name, bmonth, 0.000, 0.039, 0.000, 0.020
+Name, byear, 0.000, 0.039, 0.000, 0.020
+Name, byear, 0.000, 0.039, 0.000, 0.020
+Name, submit, 0.000, 0.039, 0.000, 0.020
+XPath, .//*[@id='content']/div, 0.650, 0.148, 0.857, 0.502
+LinkText, home page, 0.300, 0.148, 0.000, 0.074
+XPath, html/body/div[1]/div[4]/label/strong, 0.817, 0.095, 0.000, 0.048

@@ -1,6 +1,6 @@
 Type, Selector, SelectorScore, PageScore, PageAndSelectorScore, SelectorWeightedAverageResult 
 
-LinkText, gruppi, 0.300, 0.091, 0.000, 0.046
+LinkText, gruppi, 0.300, 0.089, 0.000, 0.044
 XPath, .//*[@id='content']/form/input[4], 0.733, 0.119, 0.000, 0.060
 XPath, .//*[@id='content']/form/input[9], 0.733, 0.119, 0.000, 0.060
 Name, group_name, 0.000, 0.108, 0.000, 0.054
@@ -35,12 +35,12 @@ XPath, .//*[@id='content']/form, 0.650, 0.119, 0.000, 0.060
 XPath, .//*[@id='content']/form, 0.650, 0.119, 0.000, 0.060
 XPath, .//*[@id='content']/form, 0.650, 0.119, 0.000, 0.060
 LinkText, homepage, 0.300, 0.119, 0.000, 0.060
-Name, group, 0.000, 0.091, 0.000, 0.046
+Name, group, 0.000, 0.089, 0.000, 0.044
 XPath, html/body/div[1]/div[4], 0.775, 0.089, 0.000, 0.044
 XPath, html/body/div[1]/div[4], 0.775, 0.089, 0.000, 0.044
 Name, group, 0.000, 0.089, 0.000, 0.044
-XPath, html/body/div[1]/div[4], 0.775, 0.087, 0.000, 0.044
-XPath, html/body/div[1]/div[4], 0.775, 0.087, 0.000, 0.044
-Name, group, 0.000, 0.087, 0.000, 0.044
-XPath, html/body/div[1]/div[4], 0.775, 0.087, 0.000, 0.044
-XPath, html/body/div[1]/div[4], 0.775, 0.087, 0.000, 0.044
+XPath, html/body/div[1]/div[4], 0.775, 0.089, 0.000, 0.044
+XPath, html/body/div[1]/div[4], 0.775, 0.089, 0.000, 0.044
+Name, group, 0.000, 0.089, 0.000, 0.044
+XPath, html/body/div[1]/div[4], 0.775, 0.089, 0.000, 0.044
+XPath, html/body/div[1]/div[4], 0.775, 0.089, 0.000, 0.044

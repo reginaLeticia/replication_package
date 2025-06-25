@@ -1,9 +1,19 @@
 Type, Selector, SelectorScore, PageScore, PageAndSelectorScore, SelectorWeightedAverageResult 
 
-LinkText, compleanni, 0.300, 0.091, 0.000, 0.046
-XPath, .//*[@id='birthdays']/tbody/tr[2]/td[1], 0.775, 0.136, 0.000, 0.068
-XPath, .//*[@id='birthdays']/tbody/tr[2]/td[2], 0.775, 0.136, 0.000, 0.068
-XPath, .//*[@id='birthdays']/tbody/tr[2]/td[3], 0.775, 0.136, 0.000, 0.068
-XPath, .//*[@id='birthdays']/tbody/tr[2]/td[5], 0.775, 0.136, 0.000, 0.068
-XPath, .//*[@id='birthdays']/tbody/tr[2]/td[6], 0.775, 0.136, 0.000, 0.068
-XPath, .//*[@id='birthdays']/tbody/tr[3]/td[1], 0.775, 0.136, 1.000, 0.568
+LinkText, compleanni, 0.300, 0.089, 0.000, 0.044
+XPath, .//*[@id='birthdays']/tbody/tr[2]/td[1], 0.775, 0.115, 0.000, 0.058
+XPath, .//*[@id='birthdays']/tbody/tr[2]/td[2], 0.775, 0.115, 0.000, 0.058
+XPath, .//*[@id='birthdays']/tbody/tr[2]/td[3], 0.775, 0.115, 0.000, 0.058
+XPath, .//*[@id='birthdays']/tbody/tr[2]/td[5], 0.775, 0.115, 0.000, 0.058
+XPath, .//*[@id='birthdays']/tbody/tr[2]/td[6], 0.775, 0.115, 0.000, 0.058
+XPath, .//*[@id='birthdays']/tbody/tr[3]/td[1], 0.775, 0.115, 0.000, 0.058
+XPath, .//*[@id='birthdays']/tbody/tr[3]/td[2], 0.775, 0.115, 0.000, 0.058
+XPath, .//*[@id='birthdays']/tbody/tr[3]/td[3], 0.775, 0.115, 0.000, 0.058
+XPath, .//*[@id='birthdays']/tbody/tr[3]/td[5], 0.775, 0.115, 0.000, 0.058
+XPath, .//*[@id='birthdays']/tbody/tr[3]/td[6], 0.775, 0.115, 0.000, 0.058
+XPath, .//*[@id='birthdays']/tbody/tr[4]/td[1], 0.775, 0.115, 0.000, 0.058
+XPath, .//*[@id='birthdays']/tbody/tr[4]/td[2], 0.775, 0.115, 0.000, 0.058
+XPath, .//*[@id='birthdays']/tbody/tr[4]/td[3], 0.775, 0.115, 0.000, 0.058
+XPath, .//*[@id='birthdays']/tbody/tr[4]/td[5], 0.775, 0.115, 0.000, 0.058
+XPath, .//*[@id='birthdays']/tbody/tr[4]/td[6], 0.775, 0.115, 0.000, 0.058
+XPath, .//*[@id='birthdays']/tbody/tr[1]/th, 0.775, 0.115, 0.000, 0.058
